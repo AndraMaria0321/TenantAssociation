@@ -8890,23 +8890,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Edith\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Andra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edith\\Desktop\\TennantsAss\\TennantsAss\\TenantsAss.csproj",
+      "projectUniqueName": "C:\\Users\\Andra\\Desktop\\TenantAssociation\\TennantsAss\\TenantsAss.csproj",
       "projectName": "TenantsAss",
-      "projectPath": "C:\\Users\\Edith\\Desktop\\TennantsAss\\TennantsAss\\TenantsAss.csproj",
-      "packagesPath": "C:\\Users\\Edith\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edith\\Desktop\\TennantsAss\\TennantsAss\\obj\\",
+      "projectPath": "C:\\Users\\Andra\\Desktop\\TenantAssociation\\TennantsAss\\TenantsAss.csproj",
+      "packagesPath": "C:\\Users\\Andra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andra\\Desktop\\TenantAssociation\\TennantsAss\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Edith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8981,7 +8977,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
