@@ -16,7 +16,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.11" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.12" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TenantsAss.BusinessLogic\TenantsAss.BusinessLogic.csproj" />
+    <ProjectReference Include="..\TenantsAss.DataAccess\TenantsAss.DataAccess.csproj" />
+    <ProjectReference Include="..\TenantsAss.DataModel\TenantsAss.DataModel.csproj" />
   </ItemGroup>
 
 </Project>

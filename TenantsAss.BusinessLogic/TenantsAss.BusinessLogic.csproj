@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TenantsAss.DataAccess\TenantsAss.DataAccess.csproj" />
+    <ProjectReference Include="..\TenantsAss.DataModel\TenantsAss.DataModel.csproj" />
+  </ItemGroup>
+
+</Project>

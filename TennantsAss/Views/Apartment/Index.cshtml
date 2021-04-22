@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TenantsAss.DataModel.Apartment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Apartment</h1>
+
+<p>
+    <a class="badge badge-dark" asp-action="Create">Add new apartment number</a>
+</p>
+<table class="table">
+    <thead>
+        <tr class="table-secondary">
+            <th>
+                @Html.DisplayNameFor(model => model.ApartmentNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuildingNo)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApartmentNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingNo)
+            </td>
+           
+            
+            <td>
+                <a class="badge badge-pill badge-warning" asp-action="Edit" asp-route-id="@item.ApartmenTId">Edit</a> |
+                <a class="badge badge-pill badge-info" asp-action="Details" asp-route-id="@item.ApartmenTId">Details</a> |
+                <a class="badge badge-pill badge-danger" asp-action="Delete" asp-route-id="@item.ApartmenTId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

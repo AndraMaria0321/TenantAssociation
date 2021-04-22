@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TenantsAss.DataModel/1.0.0": {
+        "runtime": {
+          "TenantsAss.DataModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TenantsAss.DataModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

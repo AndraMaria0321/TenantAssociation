@@ -6,16 +6,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TennantsAss.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace TennantsAss.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+       // UserManager<User> userManager;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+           // this.userManager = userManager;
         }
 
         public IActionResult Index()

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace TennantsAss.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -12,7 +13,6 @@ namespace TennantsAss.Data
             : base(options)
         {
         }
-
 
     }
 }

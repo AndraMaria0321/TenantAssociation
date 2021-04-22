@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TenantsAss.BusinessLogic.Abstractions;
+using TenantsAss.BusinessLogic.Services;
+using TenantsAss.DataAccess;
 using TennantsAss.Data;
 
 namespace TennantsAss
@@ -30,8 +33,14 @@ namespace TennantsAss
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<TenantsAssDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TenantsDbConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped<BuildingService>();
+            services.AddScoped<ApartmentService>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
