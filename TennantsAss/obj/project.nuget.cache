@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FirIdjcvakDEPmMiQ97Zx9xhXv2mwNfwKCOQKq5FyZHMAKPPbkekjc3nIYblyrIMSVw+SYrXY7gxY2iG21CaOQ==",
+  "dgSpecHash": "sFwhx4C5rdS8FzOrz4CGgbBq5UPcD3Gk8YvE+WiL/cKvPugKVWP+WLyDRSXxPIN7LZK+whxTMOqyVtODdY6l0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Andra\\Desktop\\TenantAssociation\\TennantsAss\\TenantsAss.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",
-    "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.11\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.11.nupkg.sha512",
+    "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.13\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.13.nupkg.sha512",
     "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.13\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.13.nupkg.sha512",
     "C:\\Users\\Andra\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.13\\microsoft.aspnetcore.identity.ui.3.1.13.nupkg.sha512",
