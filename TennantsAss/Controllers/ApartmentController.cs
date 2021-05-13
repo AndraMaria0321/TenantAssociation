@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using TenantsAss.DataModel;
 
 namespace TenantsAss.Controllers
 {
+    [Authorize]
     public class ApartmentController : Controller
     {
         private readonly TenantsAssDbContext _context;
@@ -19,6 +21,7 @@ namespace TenantsAss.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Apartment
         public async Task<IActionResult> Index()
         {
@@ -26,6 +29,7 @@ namespace TenantsAss.Controllers
             return View(await tenantsAssDbContext.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Apartment/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -46,6 +50,7 @@ namespace TenantsAss.Controllers
             return View(apartment);
         }
 
+        [Authorize(Roles = "User,Admin")]
         // GET: Apartment/Create
         public IActionResult Create()
         {
@@ -63,6 +68,7 @@ namespace TenantsAss.Controllers
         {
             if (ModelState.IsValid)
             {
+                //var userid = _context.AspNetUsers.Find(u => u.UserName == apartment.Username).FirstOrDefault().Id;
                 _context.Add(apartment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -72,6 +78,7 @@ namespace TenantsAss.Controllers
             return View(apartment);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Apartment/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -127,6 +134,7 @@ namespace TenantsAss.Controllers
             return View(apartment);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Apartment/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

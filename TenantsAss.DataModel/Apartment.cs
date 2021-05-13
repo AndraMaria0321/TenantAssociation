@@ -9,7 +9,7 @@ namespace TenantsAss.DataModel
     {
         public int ApartmenTId { get; set; }
 
-        public string ApartmentNo { get; set; }
+        public int ApartmentNo { get; set; }
 
         public int UserId { get; set; }
 
@@ -19,7 +19,7 @@ namespace TenantsAss.DataModel
         public int BuildingId { get; set; }
 
         public string BuildingNo { get; set; }
-        
+
         public User User { get; set; }
 
         public Building Building { get; set; }

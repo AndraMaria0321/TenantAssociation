@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TenantsAss.Areas.Identity.Pages.Account.Manage
+namespace BookingSite.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
@@ -35,6 +37,8 @@ namespace TenantsAss.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+            [Display(Name = "Add an image")]
+            public IFormFile Image { get; set; }
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -84,6 +88,17 @@ namespace TenantsAss.Areas.Identity.Pages.Account.Manage
                 {
                     StatusMessage = "Unexpected error when trying to set phone number.";
                     return RedirectToPage();
+                }
+            }
+
+            if (Input.Image.Length > 0)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    Input.Image.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    //user.ImageData = fileBytes;
+                    await _userManager.UpdateAsync(user);
                 }
             }
 

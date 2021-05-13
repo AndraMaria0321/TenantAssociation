@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using TenantsAss.DataModel;
 
 namespace TenantsAss.Controllers
 {
+    [Authorize]
     public class BuildingController : Controller
     {
         private readonly TenantsAssDbContext _context;
@@ -18,13 +20,13 @@ namespace TenantsAss.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Building
         public async Task<IActionResult> Index()
         {
             return View(await _context.Building.ToListAsync());
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Building/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -42,7 +44,7 @@ namespace TenantsAss.Controllers
 
             return View(building);
         }
-
+        [Authorize(Roles = "User,Admin")]
         // GET: Building/Create
         public IActionResult Create()
         {
@@ -64,7 +66,7 @@ namespace TenantsAss.Controllers
             }
             return View(building);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Building/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -80,7 +82,7 @@ namespace TenantsAss.Controllers
             }
             return View(building);
         }
-
+        
         // POST: Building/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -115,7 +117,7 @@ namespace TenantsAss.Controllers
             }
             return View(building);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Building/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

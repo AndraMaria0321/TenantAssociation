@@ -1,6 +1,6 @@
-﻿using TenantsAss.BusinessLogic.Abstractions;
+﻿using TenantsAss.BusinessLogic.Abstraction;
 
-namespace TenantsAss.BusinessLogic.Services
+namespace  TenantsAss.BusinessLogic.Services
 {
     public class BaseService
     {

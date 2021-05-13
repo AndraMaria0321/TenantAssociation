@@ -1,14 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using TennantsAss.Data;
+﻿using Microsoft.AspNetCore.Hosting;
 
-[assembly: HostingStartup(typeof(TenantsAss.Areas.Identity.IdentityHostingStartup))]
-namespace TenantsAss.Areas.Identity
+[assembly: HostingStartup(typeof(BookingSite.Areas.Identity.IdentityHostingStartup))]
+namespace BookingSite.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {

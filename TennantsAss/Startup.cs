@@ -1,20 +1,24 @@
+//using Fluent.Infrastructure.FluentModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Identity.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TenantsAss.BusinessLogic.Abstractions;
-using TenantsAss.BusinessLogic.Services;
 using TenantsAss.DataAccess;
 using TennantsAss.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using TenantsAss.BusinessLogic.Abstraction;
+using TenantsAss.BusinessLogic.Services;
 
 namespace TennantsAss
 {
@@ -30,23 +34,39 @@ namespace TennantsAss
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<TenantsAssDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TenantsDbConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                    Configuration.GetConnectionString("TenantsDbConnection")));
+           
+            services.AddDbContext<TenantsAssDbContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("TenantsDbConnection")));
+
+            // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //.AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
+
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<TenantsAssDbContext>();
 
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<BuildingService>();
             services.AddScoped<ApartmentService>();
-
-            services.AddControllersWithViews();
-            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider services)
         {
             if (env.IsDevelopment())
             {
@@ -74,6 +94,9 @@ namespace TennantsAss
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            //CreateUserRoles(services).Wait();
         }
+
     }
 }

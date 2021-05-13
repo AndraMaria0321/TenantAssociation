@@ -17,6 +17,10 @@ namespace TenantsAss.DataModel
 
         public string Password { get; set; }
 
+        public int UserTypeId { get; set; }
+
+        public UserType UserType { get; set; }
+
         public ICollection<Apartment> Apartment { get; set; }
 
     }

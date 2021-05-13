@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TenantsAss.Areas.Identity.Pages.Account.Manage
+namespace BookingSite.Areas.Identity.Pages.Account.Manage
 {
     public class SetPasswordModel : PageModel
     {
