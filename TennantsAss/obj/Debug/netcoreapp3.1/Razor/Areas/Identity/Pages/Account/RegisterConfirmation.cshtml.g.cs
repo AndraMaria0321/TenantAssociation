@@ -21,28 +21,28 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Andra\Desktop\TenantAssociation\TennantsAss\Areas\Identity\Pages\_ViewImports.cshtml"
-using TenantsAss.Areas.Identity;
+using WebApplication4.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Andra\Desktop\TenantAssociation\TennantsAss\Areas\Identity\Pages\_ViewImports.cshtml"
-using TenantsAss.Areas.Identity.Pages;
+using WebApplication4.Areas.Identity.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 1 "C:\Users\Andra\Desktop\TenantAssociation\TennantsAss\Areas\Identity\Pages\Account\_ViewImports.cshtml"
-using TenantsAss.Areas.Identity.Pages.Account;
+using WebApplication4.Areas.Identity.Pages.Account;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7c0a12112ce02dcf46e6ec35596dfbe30384566", @"/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"34bca7ecd5da630bdee019b8cdae9c2cffe2f731", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"688e00cbb6df67993b0c44e3e8c69eabfa4f35f5", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"df1456aadab63a35d97c3503a30970635b77df99", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"91f9415ab2890d7bcacc86a8651ae012a5de0065", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_RegisterConfirmation : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

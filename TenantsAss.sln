@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss", "TennantsAss\TenantsAss.csproj", "{8797C93B-3FD9-4F61-A0CE-0F3B88A76CC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantsAss.BusinessLogic", "TenantsAss.BusinessLogic\TenantsAss.BusinessLogic.csproj", "{4AE86621-68B4-440C-9C4A-C4D0C9A6EDE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.BusinessLogic", "TenantsAss.BusinessLogic\TenantsAss.BusinessLogic.csproj", "{4AE86621-68B4-440C-9C4A-C4D0C9A6EDE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantsAss.DataModel", "TenantsAss.DataModel\TenantsAss.DataModel.csproj", "{63ED2720-1816-4B8B-B05D-1F0498D80AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.DataModel", "TenantsAss.DataModel\TenantsAss.DataModel.csproj", "{63ED2720-1816-4B8B-B05D-1F0498D80AA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantsAss.DataAccess", "TenantsAss.DataAccess\TenantsAss.DataAccess.csproj", "{FF1267FD-AD28-4FC8-A1E8-D233D68C6D40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.DataAccess", "TenantsAss.DataAccess\TenantsAss.DataAccess.csproj", "{FF1267FD-AD28-4FC8-A1E8-D233D68C6D40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

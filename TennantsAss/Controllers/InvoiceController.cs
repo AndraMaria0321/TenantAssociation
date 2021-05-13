@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using TenantsAss.DataModel;
 
 namespace TenantsAss.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class InvoiceController : Controller
     {
         private readonly TenantsAssDbContext _context;
@@ -45,13 +47,13 @@ namespace TenantsAss.Controllers
 
         public IActionResult Create()
         {
-            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmenTId", "ApartmenTId");
+            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmentId", "ApartmentId");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("InvoiceId,FirstName,LastName,ApartmentNo,Price,DueDate,Description,ApartmentId")] Invoice invoice)
+        public async Task<IActionResult> Create([Bind("InvoiceId,UserName,ApartmentNo,Price,Status,DueDate,Description,ApartmentId")] Invoice invoice)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +61,7 @@ namespace TenantsAss.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmenTId", "ApartmenTId", invoice.ApartmentId);
+            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmentId", "ApartmentId", invoice.ApartmentId);
             return View(invoice);
         }
 
@@ -75,13 +77,13 @@ namespace TenantsAss.Controllers
             {
                 return NotFound();
             }
-            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmenTId", "ApartmenTId", invoice.ApartmentId);
+            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmentId", "ApartmentId", invoice.ApartmentId);
             return View(invoice);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InvoiceId,FirstName,LastName,ApartmentNo,Price,DueDate,Description,ApartmentId")] Invoice invoice)
+        public async Task<IActionResult> Edit(int id, [Bind("InvoiceId,UserName,ApartmentNo,Price,Status,DueDate,Description,ApartmentId")] Invoice invoice)
         {
             if (id != invoice.InvoiceId)
             {
@@ -108,7 +110,7 @@ namespace TenantsAss.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmenTId", "ApartmenTId", invoice.ApartmentId);
+            ViewData["ApartmentId"] = new SelectList(_context.Apartment, "ApartmentId", "ApartmentId", invoice.ApartmentId);
             return View(invoice);
         }
 

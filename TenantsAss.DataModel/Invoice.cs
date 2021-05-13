@@ -10,13 +10,13 @@ namespace TenantsAss.DataModel
     {
         public int InvoiceId { get; set; }
 
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
+        public string UserName { get; set; }
 
         public int ApartmentNo { get; set; }
 
         public int Price { get; set; }
+
+        public string Status { get; set; }
 
         public DateTime DueDate { get; set; }
 
