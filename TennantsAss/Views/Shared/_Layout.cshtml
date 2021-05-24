@@ -4,18 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TennantsAssociation</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/bootstrap.css" type="text/css">
-
+    <link rel="stylesheet" href="~/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
 <body>
-    <!--
-    <div style="background-image: url('/wwwroot/images/background.jpg');
-                height: 100vh; ">
-
-     -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color: #8856e6;">
             <div class="container">
@@ -29,20 +23,6 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Building</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-controller="Building" asp-action="Index">Building List</a>
-                                <a class="dropdown-item" asp-controller="Building" asp-action="Create">Add building details</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Apartment</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-controller="Apartment" asp-action="Index">Apartments List</a>
-                                <a class="dropdown-item" asp-controller="Apartment" asp-action="Create">Add apartment details</a>
-                            </div>
                         </li>
                     </ul>
                 </div>

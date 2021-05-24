@@ -4,66 +4,63 @@
     ViewData["Title"] = "Register";
 }
 
+<center>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-         
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <center>
-                <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-                    <div class="card-header">Register</div>
-                    <div class="card-body">
-                        <h4 class="card-title">Become a member of our site!</h4>
-                        <div class="form-group">
-                            <label asp-for="Input.Email" for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-                            <input asp-for="Input.Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <center>
+                    <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Register</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Become a member of our site!</h4>
+                            <div class="form-group">
+                                <label asp-for="Input.Email" for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                                <input asp-for="Input.Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.Password" for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                                <input asp-for="Input.Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.ConfirmPassword" for="exampleInputPassword1" class="form-label mt-4">Confirmed Password</label>
+                                <input asp-for="Input.ConfirmPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="Input.Password" for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                            <input asp-for="Input.Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ConfirmPassword" for="exampleInputPassword1" class="form-label mt-4">Confirmed Password</label>
-                            <input asp-for="Input.ConfirmPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                        </div>
+                        <button type="submit" class="btn btn-danger">Register</button>
                     </div>
-                    <button type="submit" class="btn btn-danger">Register</button>
-                </div> 
-            </center>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-           
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                   
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
-<br>
+                </center>
+            </form>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
 
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </section>
+        </div>
+    <br>
+</center>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

@@ -217,7 +217,7 @@ namespace TenantsAss.DataAccess.Migrations
 
             modelBuilder.Entity("TenantsAss.DataModel.Apartment", b =>
                 {
-                    b.Property<int>("ApartmenTId")
+                    b.Property<int>("ApartmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -231,20 +231,15 @@ namespace TenantsAss.DataAccess.Migrations
                     b.Property<string>("BuildingNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ApartmenTId");
+                    b.HasKey("ApartmentId");
 
                     b.HasIndex("BuildingId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Apartment");
                 });
@@ -289,64 +284,20 @@ namespace TenantsAss.DataAccess.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("InvoiceId");
 
                     b.HasIndex("ApartmentId");
 
                     b.ToTable("Invoice");
-                });
-
-            modelBuilder.Entity("TenantsAss.DataModel.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId");
-
-                    b.HasIndex("UserTypeId");
-
-                    b.ToTable("User");
-                });
-
-            modelBuilder.Entity("TenantsAss.DataModel.UserType", b =>
-                {
-                    b.Property<int>("UserTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Type")
-                        .HasColumnType("bit");
-
-                    b.HasKey("UserTypeId");
-
-                    b.ToTable("UserType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -407,12 +358,6 @@ namespace TenantsAss.DataAccess.Migrations
                         .HasForeignKey("BuildingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("TenantsAss.DataModel.User", "User")
-                        .WithMany("Apartment")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("TenantsAss.DataModel.Invoice", b =>
@@ -420,15 +365,6 @@ namespace TenantsAss.DataAccess.Migrations
                     b.HasOne("TenantsAss.DataModel.Apartment", "Apartment")
                         .WithMany("Invoices")
                         .HasForeignKey("ApartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("TenantsAss.DataModel.User", b =>
-                {
-                    b.HasOne("TenantsAss.DataModel.UserType", "UserType")
-                        .WithMany("User")
-                        .HasForeignKey("UserTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

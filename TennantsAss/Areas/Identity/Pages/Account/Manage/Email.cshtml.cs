@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace BookingSite.Areas.Identity.Pages.Account.Manage
+namespace WebApplication4.Areas.Identity.Pages.Account.Manage
 {
     public partial class EmailModel : PageModel
     {

@@ -19,8 +19,5 @@ namespace TenantsAss.DataAccess
 
         public DbSet<Invoice> Invoice { get; set; }
 
-        public DbSet<User> User { get; set; }
-
-        public DbSet<UserType> UserType { get; set; }
     }
 }

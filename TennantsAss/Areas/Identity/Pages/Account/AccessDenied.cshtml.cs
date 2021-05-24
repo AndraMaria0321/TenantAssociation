@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BookingSite.Areas.Identity.Pages.Account
+namespace WebApplication4.Areas.Identity.Pages.Account
 {
     public class AccessDeniedModel : PageModel
     {

@@ -16,9 +16,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using TenantsAss.DataAccess;
 using TennantsAss.Data;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using TenantsAss.BusinessLogic.Abstraction;
-using TenantsAss.BusinessLogic.Services;
 
 namespace TennantsAss
 {
@@ -34,9 +31,6 @@ namespace TennantsAss
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("TenantsDbConnection")));
@@ -45,7 +39,7 @@ namespace TennantsAss
                 options.UseSqlServer(Configuration.GetConnectionString("TenantsDbConnection")));
 
             // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            //.AddEntityFrameworkStores<ApplicationDbContext>();
+            // .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -56,13 +50,11 @@ namespace TennantsAss
                 options.SlidingExpiration = true;
             });
 
-
             services.AddIdentity<IdentityUser, IdentityRole>()
                     .AddEntityFrameworkStores<TenantsAssDbContext>();
 
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-            services.AddScoped<BuildingService>();
-            services.AddScoped<ApartmentService>();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

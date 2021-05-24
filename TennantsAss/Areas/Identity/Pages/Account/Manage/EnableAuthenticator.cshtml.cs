@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace BookingSite.Areas.Identity.Pages.Account.Manage
+namespace WebApplication4.Areas.Identity.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {
@@ -145,7 +145,7 @@ namespace BookingSite.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("BookingSite"),
+                _urlEncoder.Encode("WebApplication4"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace BookingSite.Areas.Identity.Pages.Account.Manage
+namespace WebApplication4.Areas.Identity.Pages.Account.Manage
 {
     public static class ManageNavPages
     {

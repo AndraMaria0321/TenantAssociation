@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace BookingSite.Areas.Identity.Pages.Account
+namespace WebApplication4.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterModel : PageModel
@@ -46,9 +46,6 @@ namespace BookingSite.Areas.Identity.Pages.Account
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            //more validation for password 
-            [RegularExpression(@"(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$", ErrorMessage = "The password need to have one uppercase case, one lower case and one digit.")]
-           
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }

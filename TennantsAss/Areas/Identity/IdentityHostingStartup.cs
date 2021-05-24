@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 
-[assembly: HostingStartup(typeof(BookingSite.Areas.Identity.IdentityHostingStartup))]
-namespace BookingSite.Areas.Identity
+[assembly: HostingStartup(typeof(WebApplication4.Areas.Identity.IdentityHostingStartup))]
+namespace WebApplication4.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {

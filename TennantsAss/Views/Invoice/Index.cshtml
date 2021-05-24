@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Invoices</h1>
 
 <p>
     <a type="button" class="badge badge-pill badge-success" asp-action="Create">Create New</a>
@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                First Name
+                Id Invoice
             </th>
             <th>
-                Last Name
+                User Name
             </th>
             <th>
                 Apartment Number
@@ -25,7 +25,7 @@
                 Price
             </th>
             <th>
-                Due Date
+                Status
             </th>
             <th></th>
         </tr>
@@ -34,10 +34,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.InvoiceId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ApartmentNo)
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DueDate)
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a type="button" class="badge badge-pill badge-primary" asp-action="Edit" asp-route-id="@item.InvoiceId">Edit</a> |

@@ -11,7 +11,7 @@ using TenantsAss.DataModel;
 
 namespace TenantsAss.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "User, Admin")]
     public class BuildingController : Controller
     {
         private readonly TenantsAssDbContext _context;
@@ -20,13 +20,11 @@ namespace TenantsAss.Controllers
         {
             _context = context;
         }
-        [Authorize(Roles = "Admin")]
         // GET: Building
         public async Task<IActionResult> Index()
         {
             return View(await _context.Building.ToListAsync());
         }
-        [Authorize(Roles = "Admin")]
         // GET: Building/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -44,7 +42,6 @@ namespace TenantsAss.Controllers
 
             return View(building);
         }
-        [Authorize(Roles = "User,Admin")]
         // GET: Building/Create
         public IActionResult Create()
         {
@@ -66,7 +63,6 @@ namespace TenantsAss.Controllers
             }
             return View(building);
         }
-        [Authorize(Roles = "Admin")]
         // GET: Building/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

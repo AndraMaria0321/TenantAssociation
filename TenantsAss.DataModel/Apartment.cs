@@ -7,20 +7,17 @@ namespace TenantsAss.DataModel
 {
     public class Apartment
     {
-        public int ApartmenTId { get; set; }
+        public int ApartmentId { get; set; }
 
         public int ApartmentNo { get; set; }
 
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string UserName { get; set; }
 
         public int BuildingId { get; set; }
 
         public string BuildingNo { get; set; }
-
-        public User User { get; set; }
 
         public Building Building { get; set; }
 
