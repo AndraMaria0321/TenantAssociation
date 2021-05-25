@@ -7,5 +7,6 @@ namespace TenantsAss.BusinessLogic.Abstraction
 {
     public interface IBuildingRepository : IRepositoryBase<Building>
     {
+       
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace TenantsAss.BusinessLogic.Abstraction
+﻿using TenantsAss.DataModel;
+
+namespace TenantsAss.BusinessLogic.Abstraction
 {
     public interface IRepositoryWrapper
     {
@@ -6,5 +8,6 @@
         IBuildingRepository BuildingRepository { get; }
         IApartmentRepository ApartmentRepository { get; }
         void Save();
+       
     }
 }

@@ -22,5 +22,26 @@ namespace TenantsAss.DataModel
         public Building Building { get; set; }
 
         public ICollection<Invoice> Invoices { get; set; }
+
+        public Apartment() {
+
+            Invoices = new List<Invoice>();
+        }
+
+        public IReadOnlyCollection<Invoice> GetInvoicesWithPriceLowerThanAndPaid(int price1, string status1)
+        {
+
+            var invoicesList = new List<Invoice>();
+            foreach (var invoice in Invoices)
+            {
+
+                var price = invoice.Price;
+                var status = invoice.Status;
+                if (price < price1 && status == status1) { invoicesList.Add(invoice); }
+            }
+
+            return invoicesList.AsReadOnly();
+
+        }
     }
 }

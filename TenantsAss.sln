@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.DataAccess", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.DataModel", "TenantsAss.DataModel\TenantsAss.DataModel.csproj", "{E4A9C3FB-669A-4CA3-B461-A9D609DAA20B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantsAss.AutomatedTests", "TenantsAss.AutomatedTests\TenantsAss.AutomatedTests.csproj", "{F5E1CF89-F2C6-4682-8B88-45F4B6660860}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantsAss.AutomatedTests", "TenantsAss.AutomatedTests\TenantsAss.AutomatedTests.csproj", "{F5E1CF89-F2C6-4682-8B88-45F4B6660860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantsAss.BusinessLogic.Test", "TenantsAss.BusinessLogic.Test\TenantsAss.BusinessLogic.Test.csproj", "{ED48CB4C-4D91-46E2-A514-446FCBA6DE18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F5E1CF89-F2C6-4682-8B88-45F4B6660860}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E1CF89-F2C6-4682-8B88-45F4B6660860}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E1CF89-F2C6-4682-8B88-45F4B6660860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED48CB4C-4D91-46E2-A514-446FCBA6DE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED48CB4C-4D91-46E2-A514-446FCBA6DE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED48CB4C-4D91-46E2-A514-446FCBA6DE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED48CB4C-4D91-46E2-A514-446FCBA6DE18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
