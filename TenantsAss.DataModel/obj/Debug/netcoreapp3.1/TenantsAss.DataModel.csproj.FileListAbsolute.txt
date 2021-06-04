@@ -41,3 +41,4 @@ C:\Users\Edith\Desktop\TennantsAss\TenantsAss.DataModel\obj\Debug\netcoreapp3.1\
 C:\Users\Edith\Desktop\TennantsAss\TenantsAss.DataModel\obj\Debug\netcoreapp3.1\TenantsAss.DataModel.csproj.CoreCompileInputs.cache
 C:\Users\Edith\Desktop\TennantsAss\TenantsAss.DataModel\obj\Debug\netcoreapp3.1\TenantsAss.DataModel.dll
 C:\Users\Edith\Desktop\TennantsAss\TenantsAss.DataModel\obj\Debug\netcoreapp3.1\TenantsAss.DataModel.pdb
+C:\Users\Edith\Desktop\TennantsAss\TenantsAss.DataModel\obj\Debug\netcoreapp3.1\TenantsAss.DataModel.csprojAssemblyReference.cache
